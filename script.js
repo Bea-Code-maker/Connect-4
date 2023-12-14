@@ -51,7 +51,7 @@ const handleCellClick = (e) => {
   const col = parseInt(cell.id) % 7;
 
   if (!gameActive) {
-    return; // Nu se permit mutări dacă jocul este finalizat
+    return; 
   }
 
   for (let row = 5; row >= 0; row--) {
@@ -71,9 +71,9 @@ const handleCellClick = (e) => {
   }
 
   const isFull = Array.from({ length: 7 }, (_, col) => {
-    const index = 35 + col; // Selecția primei celule din fiecare coloană
+    const index = 35 + col; 
     return cells[index].style.backgroundColor;
-  }).every(color => color); // Verificarea dacă toate celulele din rândul superior sunt colorate
+  }).every(color => color); 
 
   if (isFull && gameActive) {
     gameActive = false;
